@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
 		},
 	});
 
+	//Set up associations
 	Author.associate = models => {
+		//Author has many posts ,also when author deleted ,all related posts delete too
 		Author.hasMany(models.Post, {
 			onDelete: 'cascade',
 		});
