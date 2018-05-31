@@ -1,4 +1,6 @@
 'use strict';
+var Sequelize = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
 	const Post = sequelize.define('Post', {
 		id: {
@@ -16,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		careated_at: {
 			type: DataTypes.DATE,
-			allowNull: false,
+			defaultValue: Sequelize.NOW,
 		},
 		updated_at: DataTypes.DATE,
 		deleted_at: DataTypes.DATE,
